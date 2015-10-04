@@ -14,6 +14,8 @@
 		$action = htmlentities($input["action"]);
 		$number = htmlentities($input["number"]);
 		$type = htmlentities($input["type"];
+		$errors = FALSE;
+		$errorList = array();
 
 		foreach ($input as $key => $value) {
 			switch ($key) {
@@ -39,11 +41,41 @@
 						$errorList[] = $error;
 						$errors = TRUE;
 					}
+					$number = "";
 				}
-				$
 				
 				$typeResult = verifySelect($type, $validTypes);
+
+				if ($typeResult["errors"]) {
+					foreach ($numberResult["errorList"] as $error {
+						$errorList[] = $error;
+						$errors = TRUE;
+					}
+
+					$type = "";
+
+				}
+
 				break;
+			default:
+
+				$errorList[] = "Unexpected Action: $action";
+				$errors = TRUE;
+				$action = "cuddleStress";
+
+		}
+
+		return array(
+			"input" => $input;
+			"errors" => $errors;
+			"errorList" => $errrorList;
+			"action" => $action;
+			"number" => $number;
+			"type" => $type;
+		);
+
+	}
+}
 		
 
 ?>
