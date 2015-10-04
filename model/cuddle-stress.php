@@ -3,7 +3,7 @@
 class cuddleStress {
 
 	public $number;
-	public $type;i
+	public $type;
 
 
 	/**
