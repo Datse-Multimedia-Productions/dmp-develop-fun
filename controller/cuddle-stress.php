@@ -4,7 +4,7 @@
 
 		$cuddleStressVars = verifyCuddleStressInput($input);
 		
-		require_once("../view/cuddlestress.html.php");
+		require_once("../view/cuddle-stress.html.php");
 		dispalyCuddleStress($cuddleStressVars);
 
 	}				
@@ -13,7 +13,7 @@
 
 		$action = htmlentities($input["action"]);
 		$number = htmlentities($input["number"]);
-		$type = htmlentities($input["type"];
+		$type = htmlentities($input["type"]);
 		$errors = FALSE;
 		$errorList = array();
 
